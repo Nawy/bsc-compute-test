@@ -32,7 +32,7 @@ POST http://localhost:8055/deal
 	"currencySum": 10
 }
 ```
-### Результат
+### Результат (порядок позиций не важен)
 ```
 GET http://localhost:8055/portfolio/1213
 ```
@@ -58,7 +58,7 @@ GET http://localhost:8055/portfolio/1213
 
 ## 2) Запрос покупки инвертированной сделки, которая станет продажей
 ```
-GET http://localhost:8055/portfolio/1212
+POST http://localhost:8055/deal/inverted
 ```       
 ### Тело запроса:
 ```json
@@ -69,7 +69,7 @@ GET http://localhost:8055/portfolio/1212
 	"currencySum": 10
 }
 ```
-### Результат
+### Результат (порядок позиций не важен)
 ```
 GET http://localhost:8055/portfolio/1212
 ```
