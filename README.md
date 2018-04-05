@@ -19,7 +19,7 @@ Started ComputeTestApplication in 1.88 seconds (JVM running for 2.142)
 
 Что бы остановить сервис нужно в консоли нажать Ctrl+C
 
-Сервис хранит портфели, которые могут быть двух типов:
+Сервис хранит портфели, в портфелях хранятся сделки, которые могут быть двух типов:
 1) CURRENCY
 2) SECURITY
 
@@ -61,7 +61,7 @@ GET http://localhost:8055/portfolio/{id}
 ```
 POST http://localhost:8055/deal
 ```
-Посчитать сделки инвертированно, где тип поменяется: SELL -> BUY и BUY -> SELL
+Посчитать сделки инвертированно, где тип сделки поменяется: SELL -> BUY и BUY -> SELL
 ```
 POST http://localhost:8055/deal/inverted
 ```
