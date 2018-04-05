@@ -1,38 +1,41 @@
-# EndPoints
+# Endpoints
 
-Request portfolio
+Запросить портфель
 ```
 GET http://localhost:8055/portfolio
 ```
-Request portfolio by id
+Запросить портфель по определенному ID
 ```
 GET http://localhost:8055/portfolio/{id}
 ```
-Compute deal
+Посчитать сделки
 ```
 POST http://localhost:8055/deal
 ```
-Compute deal inverted type, SELL -> BUY; BUY -> SELL
+Посчитать сделки инвертированно, где тип поменяется: SELL -> BUY и BUY -> SELL
 ```
 POST http://localhost:8055/deal/inverted
 ```
 
-# Test case
+# Test cases
 
-## 1) Deal request
+## 1) Запрос покупки обычной сделки
 ```
 POST http://localhost:8055/deal
 ```       
-### Body:
+### Тело запроса:
 ```json
 {
 	"account": "1213",
-	"type": "sell",
+	"type": "buy",
 	"securitySum": 10,
 	"currencySum": 10
 }
 ```
-### Result(order isn't important):
+### Результат
+```
+POST http://localhost:8055/deal
+```
 ```json
 {
     "account": "1213",
@@ -53,11 +56,11 @@ POST http://localhost:8055/deal
 }
 ```
 
-## 2) Deal request
+## 2) Запрос покупки инвертированной сделки, которая станет продажей
 ```
 POST http://localhost:8055/deal/inverted
 ```       
-### Body:
+### Тело запроса:
 ```json
 {
 	"account": "1212",
@@ -66,7 +69,7 @@ POST http://localhost:8055/deal/inverted
 	"currencySum": 10
 }
 ```
-### Result(order isn't important):
+### Результат
 ```json
 {
     "account": "1212",
