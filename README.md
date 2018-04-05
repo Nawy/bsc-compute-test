@@ -70,6 +70,9 @@ GET http://localhost:8055/portfolio/1212
 }
 ```
 ### Результат
+```
+GET http://localhost:8055/portfolio/1212
+```
 ```json
 {
     "account": "1212",
