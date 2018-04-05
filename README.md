@@ -34,7 +34,7 @@ POST http://localhost:8055/deal
 ```
 ### Результат
 ```
-POST http://localhost:8055/deal
+GET http://localhost:8055/portfolio/1213
 ```
 ```json
 {
@@ -58,7 +58,7 @@ POST http://localhost:8055/deal
 
 ## 2) Запрос покупки инвертированной сделки, которая станет продажей
 ```
-POST http://localhost:8055/deal/inverted
+GET http://localhost:8055/portfolio/1212
 ```       
 ### Тело запроса:
 ```json
