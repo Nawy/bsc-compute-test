@@ -19,11 +19,11 @@ POST http://localhost:8055/deal/inverted
 
 # Test case
 
-1) Deal request
+## 1) Deal request
 ```
 POST http://localhost:8055/deal
 ```       
-Body:
+### Body:
 ```json
 {
 	"account": "1213",
@@ -32,7 +32,7 @@ Body:
 	"currencySum": 10
 }
 ```
-Result(order isn't important):
+### Result(order isn't important):
 ```json
 {
     "account": "1213",
@@ -53,11 +53,11 @@ Result(order isn't important):
 }
 ```
 
-2) Deal request
+## 2) Deal request
 ```
 POST http://localhost:8055/deal/inverted
 ```       
-Body:
+### Body:
 ```json
 {
 	"account": "1212",
@@ -66,7 +66,7 @@ Body:
 	"currencySum": 10
 }
 ```
-Result(order isn't important):
+### Result(order isn't important):
 ```json
 {
     "account": "1212",
