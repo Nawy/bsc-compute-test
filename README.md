@@ -1,6 +1,33 @@
+# Descriptions
+
+Сервис хранит портфели, которые могут быть двух типов:
+1) CURRENCY
+2) SECURITY
+
+Сервис принимает сделки (/deal) и обратные сделки (/deal/inverted), где тип поменяется: SELL -> BUY и BUY -> SELL
+Формат хранение портфеля:
+```json
+{
+    "account": "1213",
+    "positions": [
+        {
+            "name": "RUB",
+            "type": "currency",
+            "valueTO": 0,
+            "valueTN": 10
+        },
+        {
+            "name": "XDDR",
+            "type": "security",
+            "valueTO": 0,
+            "valueTN": 0
+        }
+    ]
+}
+```
 # Endpoints
 
-Запросить портфель
+Запросить все портфели
 ```
 GET http://localhost:8055/portfolio
 ```
