@@ -1,14 +1,8 @@
 # Descriptions
 
 Для запуска сервиса нужно перейти в директорию проекта и вылнить запрос в консоли/терминале:
-
-Linux/Mac:
 ```
-./gradlew clean build bootRun
-```
-Windows:
-```
-gradlew clean build bootRun
+java -jar service.jar 
 ```
 
 Сервис запустится и вернет последней строчкой:
