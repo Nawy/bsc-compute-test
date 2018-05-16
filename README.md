@@ -1,4 +1,4 @@
-# Descriptions
+## Описание
 
 Для запуска сервиса нужно перейти в директорию проекта и вылнить запрос в консоли/терминале:
 ```
@@ -38,9 +38,41 @@ Started ComputeTestApplication in 1.88 seconds (JVM running for 2.142)
     ]
 }
 ```
-
-# Задача
+# Как работает:
+Для описания принято следующее описание:
+```json
+{
+    "name": "RUB",
+    "type": "currency",
+    "valueTO": 0,
+    "valueTN": 10
+}
+```
+JSON выше превратится в зависимости от типа в Currency или Security, и через '.' оператор будет доступ ко всем его внутренним полям. В примере выше Currency.valueTN == 10.
+```json
+{
+	"account": "1213",
+	"type": "buy",
+	"securitySum": 10,
+	"currencySum": 10
+}
+```
+Сделка превратится в Deal, с полями внутри. Deal.account == 1213.
+Обе сделки, обычная и инвертированная покупают/продают N security за N currency.
+Внутри портфеля сделки изменяются следующим образом:
+**buy**:
+``` 
+Security.valueTN += Deal.securitySum;
+Currency.valueTN -= Deal.currencySum;
+```
+**sell**:
+``` 
+Security.valueTN -= Deal.securitySum;
+Currency.valueTN += Deal.currencySum;
+```
+## Задача
 Протестировать HTTP запросы. Запросы изменяют внутреннее состояние сервиса.
+
 # Endpoints
 
 Запросить все портфели
