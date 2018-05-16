@@ -1,4 +1,4 @@
-## Описание
+# Описание
 
 Для запуска сервиса нужно перейти в директорию проекта и вылнить запрос в консоли/терминале:
 ```
@@ -14,8 +14,8 @@ Started ComputeTestApplication in 1.88 seconds (JVM running for 2.142)
 Что бы остановить сервис нужно в консоли нажать Ctrl+C
 
 Сервис хранит портфели, в портфелях хранятся сделки, которые могут быть двух типов:
-1) CURRENCY
-2) SECURITY
+* CURRENCY
+* SECURITY
 
 Сервис принимает сделки (/deal) и обратные сделки (/deal/inverted), где тип поменяется: SELL -> BUY и BUY -> SELL
 Формат хранение портфеля:
@@ -38,7 +38,7 @@ Started ComputeTestApplication in 1.88 seconds (JVM running for 2.142)
     ]
 }
 ```
-# Как работает:
+## Как это работает
 Для описания принято следующее описание:
 ```json
 {
@@ -48,7 +48,7 @@ Started ComputeTestApplication in 1.88 seconds (JVM running for 2.142)
     "valueTN": 10
 }
 ```
-JSON выше превратится в зависимости от типа в Currency или Security, и через '.' оператор будет доступ ко всем его внутренним полям. В примере выше Currency.valueTN == 10.
+JSON выше превратится в зависимости от типа в *Currency* или *Security*, и через '.' оператор будет доступ ко всем его внутренним полям. В примере выше *Currency.valueTN == 10*.
 ```json
 {
 	"account": "1213",
@@ -57,23 +57,24 @@ JSON выше превратится в зависимости от типа в 
 	"currencySum": 10
 }
 ```
-Сделка превратится в Deal, с полями внутри. Deal.account == 1213.
-Обе сделки, обычная и инвертированная покупают/продают N security за N currency.
+Сделка превратится в *Deal*, с полями внутри. *Deal.account == 1213*.
+Обе сделки, обычная и инвертированная покупают/продают *N security* за *N currency*.
 Внутри портфеля сделки изменяются следующим образом:
-**buy**:
+
+### buy
 ``` 
 Security.valueTN += Deal.securitySum;
 Currency.valueTN -= Deal.currencySum;
 ```
-**sell**:
+### sell
 ``` 
 Security.valueTN -= Deal.securitySum;
 Currency.valueTN += Deal.currencySum;
 ```
-## Задача
+# Задача
 Протестировать HTTP запросы. Запросы изменяют внутреннее состояние сервиса.
 
-# Endpoints
+## Endpoints
 
 Запросить все портфели
 ```
