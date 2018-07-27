@@ -39,7 +39,7 @@ Started ComputeTestApplication in 1.88 seconds (JVM running for 2.142)
 }
 ```
 ## Как это работает
-Для описания принято следующее описание:
+Принято следующее описание:
 ```json
 {
     "name": "RUB",
