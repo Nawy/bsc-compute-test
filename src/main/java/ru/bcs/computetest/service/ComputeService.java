@@ -66,7 +66,7 @@ public class ComputeService {
     }
 
     private DealType invertDeal(DealType dealType) {
-        return dealType == DealType.BUY ? DealType.SELL : dealType;
+        return dealType == DealType.BUY ? DealType.SELL : DealType.BUY;
     }
 
     private Predicate<Position> findCurrency() {
